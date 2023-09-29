@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'com.alvarengadev.notesapp'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.alvarengadev.notesapp"
         minSdk 27
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -69,6 +69,8 @@ dependencies {
     // Hilt
     implementation 'com.google.dagger:hilt-android:2.48'
     kapt 'com.google.dagger:hilt-compiler:2.48'
+    implementation "androidx.hilt:hilt-navigation-compose:1.0.0"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0"
 
     // Room
     implementation 'androidx.room:room-runtime:2.5.2'
