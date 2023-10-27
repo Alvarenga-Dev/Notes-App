@@ -3,7 +3,6 @@ package com.alvarengadev.notesapp.feature_note.presentation.notes.components
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -73,7 +72,7 @@ fun NoteItem(
             Text(
                 text = note.title,
                 style = MaterialTheme.typography.headlineSmall,
-                color = MaterialTheme.colorScheme.onSurface,
+                color = Color.Black,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
@@ -81,17 +80,20 @@ fun NoteItem(
             Text(
                 text = note.content,
                 style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurface,
+                color = Color.Black,
                 maxLines = 10,
                 overflow = TextOverflow.Ellipsis
             )
-            Row(verticalAlignment = Alignment.Bottom) {
-                IconButton(
-                    onClick = onDeleteClick
-                ) {
-                    Icon(imageVector = Icons.Default.Delete, contentDescription = "Delete note")
-                }
-            }
+        }
+        IconButton(
+            onClick = onDeleteClick,
+            modifier = Modifier.align(alignment = Alignment.BottomEnd)
+        ) {
+            Icon(
+                imageVector = Icons.Default.Delete,
+                contentDescription = "Delete note",
+                tint = Color.Black
+            )
         }
     }
 }
